@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#preview {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+#preview img {
+  max-width: 400px;
+}
+
+#theme {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .5rem;
+  margin-top: .5rem;
+}
+
+.color {
+  width: 120px;
+  height: 65px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
