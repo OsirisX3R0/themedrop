@@ -43,6 +43,8 @@ colors.forEach((color) => {
 
 fileInput.addEventListener("change", () => {
   if (fileInput.files.length) {
+    preview.innerHTML = "";
+    colors.forEach((color) => (color.style.backgroundColor = ""));
     file = fileInput.files[0];
     const image = document.createElement("img");
     image.src = URL.createObjectURL(file);
