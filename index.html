@@ -5,14 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>themedrop</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="container">
+      <h1>themedrop</h1>
       <div id="preview">
-        <input type="file" id="fileInput" />
+        <label for="fileInput">Click here to select an Image</label>
+        <input
+          type="file"
+          name="fileInput"
+          id="fileInput"
+          accept="image/jpeg, image/png"
+        />
       </div>
-      <script type="text/javascript" src="script.js"></script>
 
       <div id="theme">
         <div class="color"></div>
@@ -21,6 +34,10 @@
         <div class="color"></div>
         <div class="color"></div>
       </div>
+
+      <div id="value"></div>
+
+      <script type="text/javascript" src="script.js"></script>
     </div>
   </body>
 </html>
