@@ -43,13 +43,20 @@ colors.forEach((color) => {
 
 fileInput.addEventListener("change", () => {
   if (fileInput.files.length) {
-    preview.innerHTML = "";
+    const existingImage = document.querySelector("#previewImage");
+    const existingFileName = document.querySelector("#fileName");
+    if (existingImage) preview.removeChild(existingImage);
+    if (existingFileName) preview.removeChild(existingFileName);
     colors.forEach((color) => (color.style.backgroundColor = ""));
     file = fileInput.files[0];
     const image = document.createElement("img");
+    image.id = "previewImage";
     image.src = URL.createObjectURL(file);
     image.alt = file.name;
-    previewLabel.innerHTML = file.name;
+    const fileName = previewLabel.cloneNode();
+    fileName.id = "fileName";
+    fileName.innerHTML = file.name;
+    preview.prepend(fileName);
     preview.prepend(image);
   }
 });
