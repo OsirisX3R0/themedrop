@@ -42,14 +42,15 @@ colors.forEach((color) => {
 });
 
 fileInput.addEventListener("change", () => {
+  console.log("files", fileInput.files);
   console.log("value", fileInput.value);
-  if (fileInput.files.length) {
+  if (fileInput.files?.length || fileInput.value) {
     const existingImage = document.querySelector("#previewImage");
     const existingFileName = document.querySelector("#fileName");
     if (existingImage) preview.removeChild(existingImage);
     if (existingFileName) preview.removeChild(existingFileName);
     colors.forEach((color) => (color.style.backgroundColor = ""));
-    file = fileInput.files[0];
+    file = fileInput.files?.[0] || fileInput.value;
     const image = document.createElement("img");
     image.id = "previewImage";
     image.src = URL.createObjectURL(file);
