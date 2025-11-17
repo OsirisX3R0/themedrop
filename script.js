@@ -41,7 +41,7 @@ colors.forEach((color) => {
   });
 });
 
-fileInput.addEventListener("change", () => {
+fileInput.addEventListener("input", () => {
   alert(`files ${fileInput.files?.[0]?.name}`);
   alert(`value ${fileInput.value}`);
   if (fileInput.files?.length || fileInput.value) {
