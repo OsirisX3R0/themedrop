@@ -45,9 +45,13 @@ colors.forEach((color) => {
   });
 });
 
+fileInput.addEventListener("change", () => alert("CHANGE Listener fired"));
+fileInput.addEventListener("click", () => alert("CLICK Listener fired"));
+fileInput.addEventListener("focus", () => alert("FOCUS Listener fired"));
+fileInput.addEventListener("blur", () => alert("BLUR Listener fired"));
 if (fileInput) alert("Adding listener");
 fileInput.addEventListener("input", () => {
-  alert("Listener fired");
+  alert("INPUT Listener fired");
   alert(`files ${fileInput.files?.[0]?.name}`);
   alert(`value ${fileInput.value}`);
   if (fileInput.files?.length || fileInput.value) {
