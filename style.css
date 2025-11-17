@@ -19,6 +19,12 @@ body {
   flex-direction: column;
 }
 
+#notSupported {
+  background: rgba(255, 0, 0, 0.25);
+  color: rgba(255, 0, 0, 0.5);
+  text-decoration: underline;
+}
+
 #fileInput {
   opacity: 0;
 }
