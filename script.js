@@ -1,3 +1,4 @@
+alert("SCRIPT LOADED");
 /** @type {HTMLInputElement} */
 const fileInput = document.querySelector("#fileInput");
 const preview = document.querySelector("#preview");
@@ -41,7 +42,7 @@ colors.forEach((color) => {
   });
 });
 
-fileInput.addEventListener("input", () => {
+fileInput.addEventListener("input", (e) => {
   alert(`files ${fileInput.files?.[0]?.name}`);
   alert(`value ${fileInput.value}`);
   if (fileInput.files?.length || fileInput.value) {
