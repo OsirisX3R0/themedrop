@@ -10,8 +10,13 @@ alert("fileInput found: " + (fileInput !== null));
 alert("fileInput id: " + fileInput?.id);
 /** @type {File} */
 let file = null;
-const eyeDropper = new EyeDropper();
-
+/** @type {EyeDropper} */
+let eyeDropper = null;
+try {
+  eyeDropper = new EyeDropper();
+} catch (e) {
+  alert("Eyedropper not supported");
+}
 colors.forEach((color) => {
   let startTime;
 
