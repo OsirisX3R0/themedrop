@@ -22,7 +22,7 @@ body {
 #notSupported {
   background: rgba(255, 0, 0, 0.1);
   color: rgba(255, 0, 0, 0.7);
-  line-height: 1.25rem;
+  font-size: 1.25rem;
   padding: .5rem;
 }
 
