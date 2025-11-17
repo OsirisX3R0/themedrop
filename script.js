@@ -5,6 +5,9 @@ const preview = document.querySelector("#preview");
 const previewLabel = document.querySelector("#preview label");
 const colors = document.querySelectorAll("#theme .color");
 const colorValue = document.querySelector("#value");
+
+alert("fileInput found: " + (fileInput !== null));
+alert("fileInput id: " + fileInput?.id);
 /** @type {File} */
 let file = null;
 const eyeDropper = new EyeDropper();
@@ -42,7 +45,9 @@ colors.forEach((color) => {
   });
 });
 
-fileInput.addEventListener("input", (e) => {
+if (fileInput) alert("Adding listener");
+fileInput.addEventListener("input", () => {
+  alert("Listener fired");
   alert(`files ${fileInput.files?.[0]?.name}`);
   alert(`value ${fileInput.value}`);
   if (fileInput.files?.length || fileInput.value) {
@@ -64,3 +69,4 @@ fileInput.addEventListener("input", (e) => {
     preview.prepend(image);
   }
 });
+alert("Added listener");
