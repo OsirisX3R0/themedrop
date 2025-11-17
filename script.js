@@ -17,9 +17,10 @@ let eyeDropper = null;
 try {
   eyeDropper = new EyeDropper();
 } catch (e) {
-  fileInput.style.display = "none";
+  preview.style.display = "none";
   const banner = document.createElement("div");
   banner.id = "notSupported";
+  banner.innerHTML = "This app does not work. Try using a different browser";
   container.prepend(banner);
 }
 
