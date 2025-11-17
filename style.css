@@ -19,9 +19,9 @@ body {
   flex-direction: column;
 }
 
-#fileInput {
+/* #fileInput {
   opacity: 0;
-}
+} */
 
 #preview {
   display: flex;

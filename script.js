@@ -51,6 +51,7 @@ fileInput.addEventListener("change", () => {
     if (existingFileName) preview.removeChild(existingFileName);
     colors.forEach((color) => (color.style.backgroundColor = ""));
     file = fileInput.files?.[0] || fileInput.value;
+
     const image = document.createElement("img");
     image.id = "previewImage";
     image.src = URL.createObjectURL(file);
