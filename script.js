@@ -51,26 +51,32 @@ fileInput.addEventListener("focus", () => alert("FOCUS Listener fired"));
 fileInput.addEventListener("blur", () => alert("BLUR Listener fired"));
 if (fileInput) alert("Adding listener");
 fileInput.addEventListener("input", () => {
-  alert("INPUT Listener fired");
-  alert(`files ${fileInput.files?.[0]?.name}`);
-  alert(`value ${fileInput.value}`);
-  if (fileInput.files?.length || fileInput.value) {
-    const existingImage = document.querySelector("#previewImage");
-    const existingFileName = document.querySelector("#fileName");
-    if (existingImage) preview.removeChild(existingImage);
-    if (existingFileName) preview.removeChild(existingFileName);
-    colors.forEach((color) => (color.style.backgroundColor = ""));
-    file = fileInput.files?.[0] || fileInput.value;
+  setTimeout(() => {
+    try {
+      alert("INPUT Listener fired");
+      alert(`files ${fileInput.files?.[0]?.name}`);
+      alert(`value ${fileInput.value}`);
+      if (fileInput.files?.length || fileInput.value) {
+        const existingImage = document.querySelector("#previewImage");
+        const existingFileName = document.querySelector("#fileName");
+        if (existingImage) preview.removeChild(existingImage);
+        if (existingFileName) preview.removeChild(existingFileName);
+        colors.forEach((color) => (color.style.backgroundColor = ""));
+        file = fileInput.files?.[0] || fileInput.value;
 
-    const image = document.createElement("img");
-    image.id = "previewImage";
-    image.src = URL.createObjectURL(file);
-    image.alt = file.name;
-    const fileName = previewLabel.cloneNode();
-    fileName.id = "fileName";
-    fileName.innerHTML = file.name;
-    preview.prepend(fileName);
-    preview.prepend(image);
-  }
+        const image = document.createElement("img");
+        image.id = "previewImage";
+        image.src = URL.createObjectURL(file);
+        image.alt = file.name;
+        const fileName = previewLabel.cloneNode();
+        fileName.id = "fileName";
+        fileName.innerHTML = file.name;
+        preview.prepend(fileName);
+        preview.prepend(image);
+      }
+    } catch (e) {
+      alert(`ERROR: ${e.message}`);
+    }
+  }, 10);
 });
 alert("Added listener");
