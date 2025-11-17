@@ -42,8 +42,8 @@ colors.forEach((color) => {
 });
 
 fileInput.addEventListener("change", () => {
-  console.log("files", fileInput.files);
-  console.log("value", fileInput.value);
+  alert(`files ${fileInput.files?.[0]?.name}`);
+  alert(`value ${fileInput.value}`);
   if (fileInput.files?.length || fileInput.value) {
     const existingImage = document.querySelector("#previewImage");
     const existingFileName = document.querySelector("#fileName");
