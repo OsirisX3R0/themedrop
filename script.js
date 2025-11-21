@@ -15,12 +15,12 @@ let eyeDropper = null;
 
 // Show alert if not supported
 try {
-  eyeDropper = new EyeDropper();
+  eyeDropper = new Eyeropper();
 } catch (e) {
   preview.style.display = "none";
   const banner = document.createElement("div");
   banner.id = "notSupported";
-  banner.innerHTML = "This app does not work. Try using a different browser";
+  banner.innerHTML = "Eyedropper is not available in this browser";
   container.prepend(banner);
 }
 
